@@ -1,29 +1,21 @@
-<div class="flex flex-column">
+<div class="p-3 flex flex-column align-items-center border border-primary " style="" >
   <h2>Login</h2>
-  <div class="text-lg mb-4"></div>
-  <!-- <mat-form-field>
-    <mat-label>Usuario</mat-label>
-    <input type="text" matInput placeholder="Nombre de usuario" #email />
-  </mat-form-field> -->
+  <div class="m-5 w-80" style="width: 80%">
+    <span class="flex justify-content-center p-float-label">
+      <input pInputText id="username" class="w-full" />
+      <label for="username">Usuario</label>
+    </span>
+  </div>
+  <div class="m-5 w-80" style="width: 80%">
+    <span class="flex justify-content-center p-float-label">
+      <p-password [toggleMask]="true" inputStyleClass="w-full" [feedback]="false" class="w-full"></p-password>
+      <label for="password">Contraseña</label>
+    </span>
+  </div>
 
-  <!-- <mat-form-field>
-    <mat-label>Contraseña</mat-label>
-    <input type="password" matInput placeholder="Contraseña" #password />
-  </mat-form-field> -->
+  <p-button label="Ingresar" class="p-button-success"></p-button>
 
-    <!-- mat-button
-    mat-flat-button -->
-  <button
-
-    color="primary"
-  >
-  <!-- (click)="login(email.value, password.value)" -->
-
-    <!-- <mat-icon>save</mat-icon> -->
-    Ingresar
-  </button>
   <div class="flex justify-content-end mt-5">
-    <!-- mat-button -->
-    <a  routerLink="/auth/register" color="link">¿No tiene cuenta?</a>
+    <a routerLink="/auth/register" color="link">¿No tiene cuenta?</a>
   </div>
 </div>

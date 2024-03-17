@@ -1,18 +1,30 @@
 import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
   imports: [
     CommonModule,
+    ButtonModule,
+    IconFieldModule,
+    InputIconModule,
+    InputTextModule,
+    PasswordModule,
   ],
   templateUrl: './login-page.component.html',
   styles: `
     :host {
       display: block;
     }
+    
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginPageComponent { }
+export class LoginPageComponent {}
