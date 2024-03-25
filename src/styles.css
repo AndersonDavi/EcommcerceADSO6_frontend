@@ -1,22 +1,44 @@
-
 /* @import "primeng/resources/themes/vela-blue/theme.css"; */
+@import "primeng/resources/themes/vela-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
-.formInput{
+.formInput {
   padding-left: 35px !important;
   /* width: 100% !important; */
 }
 html,
 body {
   height: 100%;
-  background-color: #0a1326;
+  background-color: #374151;
   color: aliceblue;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-p-password > *{
+p-password > * {
   width: 100%;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.p-menuitem-content > * {
+  text-decoration: none;
+}
+a {
+  color: white;
+}
+p-image > * > img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  min-height: 300px;
+}
+
+.login-container{
+  min-height: 100vh;
+}
+.footer{
+  background-color: #374151;
 }

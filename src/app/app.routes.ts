@@ -19,7 +19,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'auth',
+    redirectTo: 'store',
     pathMatch: 'full',
   },
   {
