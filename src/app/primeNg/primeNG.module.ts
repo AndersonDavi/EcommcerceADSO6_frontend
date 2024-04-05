@@ -11,6 +11,7 @@ import { PanelModule } from 'primeng/panel';
 import { TagModule } from 'primeng/tag';
 import { TableModule } from 'primeng/table';
 import { DividerModule } from 'primeng/divider';
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   exports: [
@@ -18,6 +19,7 @@ import { DividerModule } from 'primeng/divider';
     TableModule,
     MenubarModule,
     TagModule,
+    CarouselModule,
     DataViewModule,
     RatingModule,
     CardModule,

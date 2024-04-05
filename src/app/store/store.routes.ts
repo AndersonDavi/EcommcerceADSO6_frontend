@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
+import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
 
 export const routes: Routes = [
   {
@@ -12,7 +13,7 @@ export const routes: Routes = [
       //   { path: 'search', component: SearchPageComponent },
       //   { path: 'edit/:id', component: NewPageComponent },
       { path: 'list', component: ListPageComponent },
-      //   { path: 'id/:id', component: HeroPageComponent },
+      { path: 'producto/:id', component: ProductDetailPageComponent },
       { path: '**', redirectTo: 'list' },
     ],
   },
