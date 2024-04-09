@@ -23,7 +23,7 @@ export class ProductCarouselComponent {
   ngOnInit(): void {
     this.productService
       .getProductos()
-      .subscribe((productos) => (this.productos = productos.slice(0, 10)));
+      .subscribe((productos) => (this.productos = productos.slice(0, 14)));
     this.responsiveOptions = [
       {
         breakpoint: '1199px',

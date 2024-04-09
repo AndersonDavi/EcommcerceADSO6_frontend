@@ -19,18 +19,27 @@ export class ProductService {
         return productos;
       }),
       map((productos) => {
-        // Operador map para transformar datos
         return productos.map((producto) => {
           if (producto.nom_producto === null) {
-            producto.nom_producto = ''; // o cualquier otro valor predeterminado que desees
+            producto.nom_producto = '';
           }
           return producto;
         });
       }),
-      // para ver en la consola los mensajes de log
+
       map((productos) =>
-        productos.sort((a, b) => a.nom_producto.localeCompare(b.nom_producto))
+        // productos.sort((a, b) => a.nom_producto.localeCompare(b.nom_producto))
+        productos.sort(() => Math.random() - 0.5)
       )
+    );
+  }
+
+  getProdutoByID(id: string): Observable<Producto> {
+    return this.http.get<Producto>(`${this.baseUrl}/producto/${id}`).pipe(
+      map((producto) => {
+        console.log('Producto obtenido:', producto);
+        return producto;
+      })
     );
   }
 }

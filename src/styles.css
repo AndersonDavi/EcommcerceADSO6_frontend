@@ -36,9 +36,13 @@ p-image > * > img {
   min-height: 300px;
 }
 
-.login-container{
+.login-container {
   min-height: 100vh;
 }
-.footer{
+.footer {
   background-color: #374151;
 }
+.product-img {
+  background-color: rgb(255, 255, 255);
+}
+

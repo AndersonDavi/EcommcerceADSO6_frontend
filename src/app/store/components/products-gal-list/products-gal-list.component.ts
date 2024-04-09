@@ -15,6 +15,13 @@ import { RouterLink } from '@angular/router';
     :host {
       display: block;
     }
+    a{
+      text-decoration:none;
+
+    }
+    a:hover {
+      color: #6da6fb;
+    }
   `,
 })
 export class ProductsGalListComponent {

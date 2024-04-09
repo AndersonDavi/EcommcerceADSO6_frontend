@@ -1,22 +1,23 @@
-    <p-carousel
+<p-carousel
   [value]="productos"
   [numVisible]="6"
-  [numScroll]="3"
+  [numScroll]="4"
   [circular]="false"
   [responsiveOptions]="responsiveOptions"
 >
   <ng-template let-product pTemplate="item">
-    <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-      <div class="mb-3">
+    <div class="border-2 surface-border border-round m-2 text-center py-5 px-3 product-card flex flex-column" style=" height: 90%;">
+      <div class="mb-3 product-img shadow-2">
         <img
           [src]="product | productoImage"
           [alt]="product.nom_producto"
-          class="w-6 shadow-2"
+          class="w-6"
           style="min-height: 150px; object-fit: contain"
         />
       </div>
       <div>
-        <h3 class="mb-1">{{ product.nom_producto }} </h3>
+        <h3 class="mb-0">{{ product.modelo_producto }} </h3>
+        <p class="mt-0 mb-0" style="max-height: 40px; overflow: hidden;">{{ product.nom_producto }}</p>
         <h4 class="mt-0 mb-3">{{ product.val_producto | currency }}</h4>
         <!-- <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)"></p-tag> -->
         <div class="mt-5 flex align-items-center justify-content-center gap-2">
