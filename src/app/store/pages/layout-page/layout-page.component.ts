@@ -26,9 +26,11 @@ export class LayoutPageComponent {
       },
       {
         label: 'Inicio',
+        routerLink:"/store/list"
       },
       {
         label: 'Elementos',
+        routerLink:"/list"
       },
     ];
   }

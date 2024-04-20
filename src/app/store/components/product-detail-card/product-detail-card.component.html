@@ -1,1 +1,44 @@
-<p>{{ producto?.nom_producto }}</p>
+<div class="grid">
+  <div class="col-12 sm:col-6 xl:col-8 flex px-1 sm:px-4 ">
+    <img [src]="producto?.img_url" alt="" class=""/>
+  </div>
+  <div class="col-12 sm:col">
+    <div class="text-left p-3 border-round-sm font-bold">
+      <h1>{{ producto?.modelo_producto }}</h1>
+      <h2>{{ producto?.desc_producto }}</h2>
+    </div>
+    <div class="text-left p-3 border-round-sm font-bold">
+      <span>{{
+        producto?.val_producto | currency : "COP" : "$" : "1.0-4"
+      }}</span>
+    </div>
+    <div class="text-left p-3 border-round-sm font-bold">
+      <span
+        >en 12x
+        {{
+          formatearPrecio(producto?.val_producto, 12)
+            | currency : "COP" : "$" : "1.0-4"
+        }}
+        sin intereses</span
+      >
+    </div>
+
+    <div class="grid p-6">
+      <!-- <div class="col-12">
+        <div class="text-center p-3 border-round-sm bg-primary font-bold">
+          4
+        </div>
+      </div> -->
+      <div class="col-12 ">
+        <div class="border-1 text-center p-2 border-round-sm bg-secondary font-bold">
+          <p>Comprar ahora</p>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="text-center p-2 border-round-sm bg-primary font-bold">
+          <p>Agregar al carro</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

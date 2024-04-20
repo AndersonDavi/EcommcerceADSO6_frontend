@@ -45,4 +45,6 @@ p-image > * > img {
 .product-img {
   background-color: rgb(255, 255, 255);
 }
-
+.dev{
+  border: solid 1px white;
+}

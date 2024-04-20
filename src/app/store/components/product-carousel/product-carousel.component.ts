@@ -42,4 +42,9 @@ export class ProductCarouselComponent {
       },
     ];
   }
+  actualizarProductos(): void {
+    this.productService
+      .getProductos()
+      .subscribe((productos) => (this.productos = productos.slice(0, 14)));
+  }
 }

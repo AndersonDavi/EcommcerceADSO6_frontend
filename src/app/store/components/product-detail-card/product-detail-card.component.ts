@@ -2,17 +2,23 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../../interfaces/Producto';
 import { ProductService } from '../../services/product-service.service';
-import { map, pipe, switchMap } from 'rxjs';
+import { switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'store-product-detail-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonModule],
   templateUrl: './product-detail-card.component.html',
   styles: `
     :host {
       display: block;
+    }
+    img{
+      width:100%;
+      max-height: 600px;
+      object-fit: contain;
     }
   `,
 })
@@ -33,5 +39,11 @@ export class ProductDetailCardComponent implements OnInit {
         this.producto = producto;
         return;
       });
+  }
+
+  formatearPrecio(number: number | undefined, meses: number): string {
+    if (!number) return '0';
+    const number_ = number / meses;
+    return number_.toFixed(2);
   }
 }
