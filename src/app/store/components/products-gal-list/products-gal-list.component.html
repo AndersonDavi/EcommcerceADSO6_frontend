@@ -6,7 +6,7 @@
         *ngFor="let producto of productos; let i = index"
       >
         <div
-          class="flex flex-column xl:flex-row xl:align-items-start p-4 product-card m-2"
+          class="overflow-hidden flex flex-column xl:flex-row xl:align-items-start p-4 product-card m-2"
           [ngClass]="{ 'border-top-1 surface-border': !i }"
           style="height: 100%"
         >

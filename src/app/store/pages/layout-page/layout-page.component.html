@@ -1,6 +1,6 @@
 <p-menubar [model]="items">
   <ng-template pTemplate="end">
-    <p-button label="Salir" icon="pi pi-sign-out" severity="secondary" [text]="true" [plain]="true"></p-button>
+    <p-button [routerLink]="['/auth']" label="Salir" icon="pi pi-sign-out" severity="secondary" [text]="true" [plain]="true"></p-button>
   </ng-template>
 </p-menubar>
 
