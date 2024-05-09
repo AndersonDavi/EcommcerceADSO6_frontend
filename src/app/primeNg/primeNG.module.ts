@@ -19,7 +19,6 @@ import { TagModule } from 'primeng/tag';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 
-
 @NgModule({
   exports: [
     ToolbarModule,

@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { PrimeNgModule } from '../../../primeNg/primeNG.module';
 import { ProductService } from '../../../store/services/product-service.service';
+import { Router } from '@angular/router';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-products-list-page',
@@ -31,6 +33,7 @@ import { ProductService } from '../../../store/services/product-service.service'
 })
 export class NewProductPageComponent {
   private prodService = inject(ProductService);
+  private router = inject(Router);
   private fb = inject(FormBuilder);
 
   public myForm: FormGroup = this.fb.group({
@@ -59,6 +62,11 @@ export class NewProductPageComponent {
         creado_por: data.creado_por,
         img_url: data.imagen,
       })
+      .pipe(
+        tap(() => {
+          this.router.navigateByUrl('/dashboard/products');
+        })
+      )
       .subscribe();
   }
 }

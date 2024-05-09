@@ -15,7 +15,6 @@ import { MenuItem } from 'primeng/api';
       display: block;
     }
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutPageComponent {
   items: MenuItem[] | undefined;
@@ -42,10 +41,6 @@ export class LayoutPageComponent {
       {
         label: 'Productos',
         routerLink: '/dashboard/products',
-      },
-      {
-        label: 'new Productos',
-        routerLink: '/dashboard/new-product',
       },
     ];
   }
