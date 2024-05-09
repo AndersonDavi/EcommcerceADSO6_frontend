@@ -42,4 +42,13 @@ export class ProductService {
       })
     );
   }
+
+  crearProducto(producto: Producto) {
+    return this.http.post<Producto>(`${this.baseUrl}/productos`, producto).pipe(
+      map((producto) => {
+        console.log('Producto creado:', producto);
+        return producto;
+      })
+    );
+  }
 }

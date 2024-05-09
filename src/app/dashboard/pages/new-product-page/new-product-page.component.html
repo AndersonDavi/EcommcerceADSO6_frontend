@@ -1,0 +1,55 @@
+<div class="container flex flex-row justify-content-evenly align-items-center">
+  <div
+    class="form-container flex flex-column justify-content-evenly align-items-center w-12 h-full"
+  >
+    <h3>Añadir producto</h3>
+    <form
+      [formGroup]="myForm"
+      class="flex flex-column justify-content-evenly align-items-center w-12 h-full"
+    >
+      <div class="card flex flex-column w-6">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" pInputText formControlName="nombre" />
+      </div>
+      <div class="card flex flex-column w-6">
+        <label for="descripcion">Descripción</label>
+        <input
+          id="descripcion"
+          type="text"
+          pInputText
+          formControlName="descripcion"
+        />
+      </div>
+      <div class="card flex flex-column w-6">
+        <label for="marca">Marca</label>
+        <input id="marca" type="text" pInputText formControlName="marca" />
+      </div>
+      <div class="card flex flex-column w-6">
+        <label for="modelo">Modelo</label>
+        <input id="modelo" type="text" pInputText formControlName="modelo" />
+      </div>
+      <div class="card flex flex-column w-6">
+        <label for="valor">Valor</label>
+        <p-inputNumber
+          inputId="integeronly"
+          mode="currency"
+          currency="COP"
+          formControlName="valor"
+        />
+      </div>
+
+      <div class="card flex flex-column w-6">
+        <label for="imagen">Imagen</label>
+        <input id="imagen" type="text" pInputText formControlName="imagen" />
+      </div>
+      <div class="card image-container w-6">
+        <img [src]="myForm.controls['imagen'].value" alt="imagen" />
+      </div>
+      <p-button
+        label="Enviar"
+        [disabled]="myForm.invalid"
+        (onClick)="onSubmit()"
+      ></p-button>
+    </form>
+  </div>
+</div>

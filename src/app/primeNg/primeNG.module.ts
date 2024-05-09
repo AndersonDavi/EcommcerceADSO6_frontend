@@ -1,33 +1,46 @@
-import { NgModule } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
+import { DataViewModule } from 'primeng/dataview';
+import { DividerModule } from 'primeng/divider';
 import { FieldsetModule } from 'primeng/fieldset';
+import { ImageModule } from 'primeng/image';
+import { InputMaskModule } from 'primeng/inputmask';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuModule } from 'primeng/menu';
-import { ImageModule } from 'primeng/image';
-import { DataViewModule } from 'primeng/dataview';
-import { RatingModule } from 'primeng/rating';
+import { NgModule } from '@angular/core';
 import { PanelModule } from 'primeng/panel';
-import { TagModule } from 'primeng/tag';
+import { PasswordModule } from 'primeng/password';
+import { RatingModule } from 'primeng/rating';
 import { TableModule } from 'primeng/table';
-import { DividerModule } from 'primeng/divider';
-import { CarouselModule } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+
 
 @NgModule({
   exports: [
-    DividerModule,
-    TableModule,
-    MenubarModule,
-    TagModule,
+    ToolbarModule,
+    ButtonModule,
+    CardModule,
     CarouselModule,
     DataViewModule,
-    RatingModule,
-    CardModule,
-    MenuModule,
+    DividerModule,
     FieldsetModule,
-    PanelModule,
-    ButtonModule,
     ImageModule,
+    InputMaskModule,
+    InputNumberModule,
+    InputTextModule,
+    MenubarModule,
+    MenuModule,
+    PanelModule,
+    PasswordModule,
+    RatingModule,
+    TableModule,
+    TagModule,
+    ToastModule,
   ],
 })
 export class PrimeNgModule {}

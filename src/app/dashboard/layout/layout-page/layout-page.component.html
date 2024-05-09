@@ -1,0 +1,33 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="end">
+    <p-button [routerLink]="['/auth']" label="Salir" icon="pi pi-sign-out" severity="secondary" [text]="true" [plain]="true"></p-button>
+  </ng-template>
+</p-menubar>
+
+<div class="">
+  <router-outlet></router-outlet>
+</div>
+
+
+<div class="grid text-center p-4">
+  <div class="col-6">
+    <p class="font-bold text-900">Proyecto EcommerceADSO6</p>
+    <p>Desarrollado por ADSO6</p>
+  </div>
+  <div class="col-6">
+    <p class="font-bold text-900">Desarrollado con las tecnologias</p>
+    <p>Angular</p>
+    <p>SpringBoot</p>
+    <p>SQL server</p>
+  </div>
+</div>
+<p-divider type="solid"></p-divider>
+<div class="grid text-center p-3" style="height: 80px">
+  <div class="col-12">
+    <img src="https://tramiteinformativo.com/wp-content/uploads/2022/08/logo-sena-verde-png-sin-fondo.png" alt=""
+      style="height: 40px" />
+  </div>
+  <div class="col-12">
+    <p class="text-600" style="font-size: 10px;">&#64; 2024, Sena ADSO 6</p>
+  </div>
+</div>

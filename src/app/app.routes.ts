@@ -14,6 +14,11 @@ export const routes: Routes = [
     loadChildren: () => import('./store/store.routes').then((m) => m.routes),
   },
   {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.routes').then((m) => m.routes),
+  },
+  {
     path: '404',
     component: Error404PageComponent,
   },
