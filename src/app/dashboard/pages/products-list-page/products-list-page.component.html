@@ -9,7 +9,6 @@
       icon="pi pi-plus"
       class="mr-2"
       routerLink="/dashboard/new-product"
-      (click)="openNew()"
     />
   </ng-template>
 </p-toolbar>
@@ -21,7 +20,7 @@
   [tableStyle]="{ 'min-width': '75rem' }"
   [rowHover]="true"
   dataKey="id"
-  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  currentPageReportTemplate="Mostrando de {first} a {last} de {totalRecords} productos"
   [showCurrentPageReport]="true"
 >
   <ng-template pTemplate="caption">
@@ -41,20 +40,25 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th pSortableColumn="id_producto" style="min-width: 15rem">  ID <p-sortIcon field="id_producto" /></th>
+      <th pSortableColumn="id_producto" style="min-width: 15rem">
+        ID <p-sortIcon field="id_producto" />
+      </th>
       <th pSortableColumn="nom_producto" style="min-width: 15rem">
         Nombre <p-sortIcon field="nom_producto" />
       </th>
       <th>Imagen</th>
-      <th pSortableColumn="val_producto">Valor <p-sortIcon field="val_producto" /></th>
+      <th pSortableColumn="val_producto">
+        Valor <p-sortIcon field="val_producto" />
+      </th>
       <th pSortableColumn="modelo_producto" style="min-width: 10rem">
         Modelo <p-sortIcon field="modelo_producto" />
       </th>
-      <th pSortableColumn="marca_producto">Marca <p-sortIcon field="marca_producto" /></th>
+      <th pSortableColumn="marca_producto">
+        Marca <p-sortIcon field="marca_producto" />
+      </th>
       <th pSortableColumn="desc_producto" style="min-width: 10rem">
         Descripción <p-sortIcon field="desc_producto" />
       </th>
-      <!-- <th></th> -->
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-producto>
@@ -89,7 +93,7 @@
   </ng-template>
   <ng-template pTemplate="summary">
     <div class="flex align-items-center justify-content-between">
-      In total there are {{ products ? products.length : 0 }} products.
+      En total se encontraton {{ products ? products.length : 0 }} productos.
     </div>
   </ng-template>
 </p-table>
