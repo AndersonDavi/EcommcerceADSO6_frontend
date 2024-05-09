@@ -12,88 +12,108 @@
     />
   </ng-template>
 </p-toolbar>
-<p-table
-  #dt
-  [value]="products"
-  [rows]="10"
-  [paginator]="true"
-  [tableStyle]="{ 'min-width': '75rem' }"
-  [rowHover]="true"
-  dataKey="id"
-  currentPageReportTemplate="Mostrando de {first} a {last} de {totalRecords} productos"
-  [showCurrentPageReport]="true"
->
-  <ng-template pTemplate="caption">
-    <div class="flex align-items-center justify-content-between">
-      <h5 class="m-0">Administrar Productos</h5>
-      <span class="p-input-icon-left">
-        <i class="pi pi-search"></i>
+<div class="table-container">
+  <p-table
+    #dt
+    [value]="products"
+    [rows]="15"
+    [paginator]="true"
+    [tableStyle]="{ 'min-width': '10rem' }"
+    [rowHover]="true"
+    dataKey="id"
+    currentPageReportTemplate="Mostrando de {first} a {last} de {totalRecords} productos"
+    [showCurrentPageReport]="true"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <h5 class="m-0">Administrar Productos</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
 
-        <input
-          pInputText
-          type="text"
-          placeholder="Search..."
-          (input)="dt.filterGlobal($event.target, 'contains')"
-        />
-      </span>
-    </div>
-  </ng-template>
-  <ng-template pTemplate="header">
-    <tr>
-      <th pSortableColumn="id_producto" style="min-width: 15rem">
-        ID <p-sortIcon field="id_producto" />
-      </th>
-      <th pSortableColumn="nom_producto" style="min-width: 15rem">
-        Nombre <p-sortIcon field="nom_producto" />
-      </th>
-      <th>Imagen</th>
-      <th pSortableColumn="val_producto">
-        Valor <p-sortIcon field="val_producto" />
-      </th>
-      <th pSortableColumn="modelo_producto" style="min-width: 10rem">
-        Modelo <p-sortIcon field="modelo_producto" />
-      </th>
-      <th pSortableColumn="marca_producto">
-        Marca <p-sortIcon field="marca_producto" />
-      </th>
-      <th pSortableColumn="desc_producto" style="min-width: 10rem">
-        Descripción <p-sortIcon field="desc_producto" />
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-producto>
-    <tr>
-      <td>
-        {{ producto.id_producto }}
-      </td>
-      <td>
-        {{ producto.nom_producto }}
-      </td>
-      <td>
-        <img
-          [src]="producto.img_url"
-          [alt]="producto.nom_producto"
-          width="50"
-          class="shadow-4"
-        />
-      </td>
-      <td>
-        {{ producto.val_producto | currency : "COP" : "$" : "1.2-4" }}
-      </td>
-      <td>
-        {{ producto.modelo_producto }}
-      </td>
-      <td>
-        {{ producto.marca_producto }}
-      </td>
-      <td>
-        {{ producto.desc_producto }}
-      </td>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="summary">
-    <div class="flex align-items-center justify-content-between">
-      En total se encontraton {{ products ? products.length : 0 }} productos.
-    </div>
-  </ng-template>
-</p-table>
+          <input
+            pInputText
+            type="text"
+            placeholder="Search..."
+            (input)="dt.filterGlobal($event, 'contains')"
+          />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="id_producto" style="min-width: 5rem">
+          ID <p-sortIcon field="id_producto" />
+        </th>
+        <th pSortableColumn="nom_producto" style="min-width: 8rem">
+          Nombre <p-sortIcon field="nom_producto" />
+        </th>
+        <th>Imagen</th>
+        <th pSortableColumn="val_producto">
+          Valor <p-sortIcon field="val_producto" />
+        </th>
+        <th pSortableColumn="modelo_producto" style="min-width: 8rem">
+          Modelo <p-sortIcon field="modelo_producto" />
+        </th>
+        <th pSortableColumn="marca_producto">
+          Marca <p-sortIcon field="marca_producto" />
+        </th>
+        <th pSortableColumn="desc_producto" style="min-width: 10rem">
+          Descripción <p-sortIcon field="desc_producto" />
+        </th>
+        <th style="min-width: 10rem"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-producto>
+      <tr>
+        <td>
+          {{ producto.id_producto }}
+        </td>
+        <td>
+          {{ producto.nom_producto }}
+        </td>
+        <td>
+          <img
+            [src]="producto.img_url"
+            [alt]="producto.nom_producto"
+            width="50"
+            class="shadow-4"
+          />
+        </td>
+        <td>
+          {{ producto.val_producto | currency : "COP" : "$" : "1.2-4" }}
+        </td>
+        <td>
+          {{ producto.modelo_producto }}
+        </td>
+        <td>
+          {{ producto.marca_producto }}
+        </td>
+        <td>
+          {{ producto.desc_producto }}
+        </td>
+        <td>
+          <p-button
+            pRipple
+            icon="pi pi-pencil"
+            class="mr-2"
+            [rounded]="true"
+            [outlined]="true"
+            severity="success"
+          />
+          <p-button
+            pRipple
+            icon="pi pi-trash"
+            severity="danger"
+            [rounded]="true"
+            [outlined]="true"
+          />
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        En total se encontraton {{ products ? products.length : 0 }} productos.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
