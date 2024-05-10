@@ -15,7 +15,7 @@ export class ProductService {
   getProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(`${this.baseUrl}/productos`).pipe(
       map((productos) => {
-        console.log('Productos obtenidos:', productos);
+        // console.log('Productos obtenidos:', productos);
         return productos;
       }),
       map((productos) => {
@@ -50,5 +50,24 @@ export class ProductService {
         return producto;
       })
     );
+  }
+  editarProducto(producto: Producto) {
+    console.log(`${this.baseUrl}/productos/${producto.id_producto}`);
+
+    return this.http
+      .put<Producto>(
+        `${this.baseUrl}/productos/${producto.id_producto}`,
+        producto
+      )
+      .pipe(
+        map((producto) => {
+          return producto;
+        })
+      );
+  }
+
+  borrarProducto(id: number) {
+    console.log(`${this.baseUrl}/productos/${id}`);
+    return this.http.delete(`${this.baseUrl}/productos/${id}`).subscribe();
   }
 }

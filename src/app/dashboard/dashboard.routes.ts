@@ -5,6 +5,7 @@ import { UsersListPageComponent } from './pages/users-list-page/users-list-page.
 import { NewUserPageComponent } from './pages/new-user-page/new-user-page.component';
 import { NewProductPageComponent } from './pages/new-product-page/new-product-page.component';
 import { ProductsListPageComponent } from './pages/products-list-page/products-list-page.component';
+import { EditProductPageComponent } from './pages/edit-product-page/edit-product-page.component';
 export const routes: Routes = [
   {
     path: '',
@@ -14,6 +15,7 @@ export const routes: Routes = [
       { path: 'users', component: UsersListPageComponent },
       { path: 'new-user', component: NewUserPageComponent },
       { path: 'new-product', component: NewProductPageComponent },
+      { path: 'edit-product/:id', component: EditProductPageComponent },
       { path: 'products', component: ProductsListPageComponent },
       { path: '**', redirectTo: 'home' },
     ],

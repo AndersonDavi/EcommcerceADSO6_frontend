@@ -29,7 +29,6 @@ import { tap } from 'rxjs';
     margin-bottom:15px;
    }
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewProductPageComponent {
   private prodService = inject(ProductService);

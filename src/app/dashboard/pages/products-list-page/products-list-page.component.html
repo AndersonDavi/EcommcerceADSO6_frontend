@@ -99,6 +99,7 @@
             [rounded]="true"
             [outlined]="true"
             severity="success"
+            [routerLink]="['/dashboard/edit-product', producto.id_producto]"
           />
           <p-button
             pRipple
@@ -106,6 +107,7 @@
             severity="danger"
             [rounded]="true"
             [outlined]="true"
+            (onClick)="seleccionarProducto(producto); confirm2($event)"
           />
         </td>
       </tr>
@@ -116,4 +118,6 @@
       </div>
     </ng-template>
   </p-table>
+  <p-toast />
+  <p-confirmDialog />
 </div>
