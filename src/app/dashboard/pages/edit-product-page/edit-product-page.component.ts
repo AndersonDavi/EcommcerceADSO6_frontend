@@ -23,17 +23,7 @@ import { Producto } from '../../../store/interfaces/Producto';
   imports: [CommonModule, PrimeNgModule, ReactiveFormsModule],
   templateUrl: './edit-product-page.component.html',
   styles: `
-  .container{
-    height:100%;
-   }
-   .image-container img{
-    width:100%;
-    height:100%;
-    object-fit: contain;
-   }
-   form .card{
-    margin-bottom:15px;
-   }
+
   `,
 })
 export class EditProductPageComponent implements OnInit {

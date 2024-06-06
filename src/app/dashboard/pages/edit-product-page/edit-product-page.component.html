@@ -1,61 +1,71 @@
-<div class="container flex flex-row justify-content-evenly align-items-center">
-    <div
-      class="form-container flex flex-column justify-content-evenly align-items-center w-12 h-full"
+<div class="h-full w-full flex flex-row items-center justify-center bg-red-200">
+  <div class="lex flex-col w-full h-full bg-green-100">
+    <h3>Editar producto</h3>
+    <form
+      [formGroup]="myForm"
+      class="flex flex-col justify-evenly items-center w-full h-full"
     >
-      <h3>Editar producto</h3>
-      <form
-        [formGroup]="myForm"
-        class="flex flex-column justify-content-evenly align-items-center w-12 h-full"
-      >
-        <div class="card flex flex-column w-6">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" type="text" pInputText formControlName="nom_producto" />
-        </div>
-        <div class="card flex flex-column w-6">
-          <label for="descripcion">Descripción</label>
-          <input
-            id="descripcion"
-            type="text"
-            pInputText
-            formControlName="desc_producto"
-          />
-        </div>
-        <div class="card flex flex-column w-6">
-          <label for="marca">Marca</label>
-          <input id="marca" type="text" pInputText formControlName="marca_producto" />
-        </div>
-        <div class="card flex flex-column w-6">
-          <label for="modelo">Modelo</label>
-          <input id="modelo" type="text" pInputText formControlName="modelo_producto" />
-        </div>
-        <div class="card flex flex-column w-6">
-          <label for="valor">Valor</label>
-          <p-inputNumber
-            inputId="integeronly"
-            mode="currency"
-            currency="COP"
-            formControlName="val_producto"
-          />
-        </div>
-  
-        <div class="card flex flex-column w-6">
-          <label for="imagen">Imagen</label>
-          <input id="imagen" type="text" pInputText formControlName="img_url" />
-        </div>
-        <div class="card image-container w-6">
-          <img [src]="myForm.controls['img_url'].value" alt="imagen" />
-        </div>
-        
-        <p-button
-          label="Guardar cambios"
-          [disabled]="myForm.invalid"
-          (onClick)="onSubmit()"
-        ></p-button>
-        <p-button
-        label="Cancelar"
-        routerLink="/dashboard/products"
+      <div class="card flex flex-col w-[50%]">
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          pInputText
+          formControlName="nom_producto"
+        />
+      </div>
+      <div class="card flex flex-col w-[50%]">
+        <label for="descripcion">Descripción</label>
+        <input
+          id="descripcion"
+          type="text"
+          pInputText
+          formControlName="desc_producto"
+        />
+      </div>
+      <div class="card flex flex-col w-[50%]">
+        <label for="marca">Marca</label>
+        <input
+          id="marca"
+          type="text"
+          pInputText
+          formControlName="marca_producto"
+        />
+      </div>
+      <div class="card flex flex-col w-[50%]">
+        <label for="modelo">Modelo</label>
+        <input
+          id="modelo"
+          type="text"
+          pInputText
+          formControlName="modelo_producto"
+        />
+      </div>
+      <div class="card flex flex-col w-[50%]">
+        <label for="valor">Valor</label>
+        <p-inputNumber
+          inputId="integeronly"
+          mode="currency"
+          currency="COP"
+          formControlName="val_producto"
+        />
+      </div>
+
+      <div class="card flex flex-col w-[50%]">
+        <label for="imagen">Imagen</label>
+        <input id="imagen" type="text" pInputText formControlName="img_url" />
+      </div>
+      <div class="card w-[50%]">
+        <img [src]="myForm.controls['img_url'].value" alt="imagen" />
+      </div>
+
+      <p-button
+        label="Guardar cambios"
+        [disabled]="myForm.invalid"
+        (onClick)="onSubmit()"
+        class="btn-primary w-[40%]"
       ></p-button>
-      </form>
-    </div>
+      <p-button label="Cancelar" routerLink="/dashboard/products" class="btn-primary-outline w-[40%]"></p-button>
+    </form>
   </div>
-  
+</div>
