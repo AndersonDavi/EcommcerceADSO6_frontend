@@ -25,10 +25,6 @@ import { PasswordModule } from 'primeng/password';
     :host {
       display: block;
     }
-    .form-card{
-      background-color: #262e3a;
-    }
-    
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

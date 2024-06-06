@@ -1,21 +1,41 @@
-<div class="p-3 flex flex-column align-items-center border border-primary form-card" style="border: 1px solid;" >
-  <h2>Login</h2>
-  <div class="m-5 w-80" style="width: 80%">
-    <span class="flex justify-content-center p-float-label">
-      <input pInputText id="username" class="w-full" />
-      <label for="username">Usuario</label>
-    </span>
-  </div>
-  <div class="m-5 w-80" style="width: 80%">
-    <span class="flex justify-content-center p-float-label">
-      <p-password [toggleMask]="true" inputStyleClass="w-full" [feedback]="false" class="w-full"></p-password>
-      <label for="password">Contraseña</label>
-    </span>
-  </div>
+<div
+  class="p-3 flex flex-col justify-center items-center bg-white text-black border-primary border-[1px]"
+>
+  <h2 class="mb-5 text-2xl">Login</h2>
+  <span
+    class="my-5 w-full h-10 flex justify-center p-float-label border-primary border-[1px]"
+  >
+    <input pInputText id="username" class="w-full px-2" />
+    <label for="username">Usuario</label>
+  </span>
 
-  <p-button label="Ingresar" class="p-button-success" routerLink="/store"></p-button>
+  <span
+    class="my-5 w-full h-10 flex justify-center p-float-label border-primary border-[1px]"
+  >
+    <p-password
+      id="password1"
+      type="password"
+      class="w-full"
+      [feedback]="false"
+      [style]="{ height: '100%' }"
+      [inputStyle]="{
+        height: '100%',
+        paddingRight: '35px',
+        paddingLeft: '8px'
+      }"
+      [toggleMask]="true"
+    ></p-password>
+    <label for="password">Contraseña</label>
+  </span>
+
+  <a class="btn-primary w-full" routerLink="/store">Ingresar</a>
 
   <div class="flex justify-content-end mt-5">
-    <a routerLink="/auth/register" color="link" routerLinkActive="router-link-active" >¿No tiene cuenta?</a>
+    <a
+      routerLink="/auth/register"
+      color="link"
+      routerLinkActive="router-link-active"
+      >¿No tiene cuenta?</a
+    >
   </div>
 </div>
