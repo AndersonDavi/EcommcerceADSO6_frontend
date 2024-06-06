@@ -15,11 +15,7 @@ import { ButtonModule } from 'primeng/button';
     :host {
       display: block;
     }
-    img{
-      width:100%;
-      max-height: 600px;
-      object-fit: contain;
-    }
+ 
   `,
 })
 export class ProductDetailCardComponent implements OnInit {

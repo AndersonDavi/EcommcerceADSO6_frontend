@@ -1,18 +1,21 @@
-<div class="grid">
-  <div class="col-12 sm:col-6 xl:col-8 flex px-1 sm:px-4 " style="background-color: white;">
-    <img [src]="producto?.img_url" alt="" class=""/>
+<div class="grid sm:grid-cols-2">
+  <div
+    class="col-12 sm:col-6 xl:col-8 flex px-1 sm:px-4"
+    style="background-color: white"
+  >
+    <img [src]="producto?.img_url" alt="" class="" />
   </div>
-  <div class="col-12 sm:col" >
-    <div class="text-left p-3 border-round-sm font-bold">
-      <h1>{{ producto?.modelo_producto }}</h1>
-      <h2>{{ producto?.desc_producto }}</h2>
+  <div class="col-12 sm:col flex flex-col items-start p-6">
+    <div class="text-left py-3 border-round-sm font-bold">
+      <h1 class="text-2xl">{{ producto?.modelo_producto }}</h1>
+      <h2 class="text-md font-normal">{{ producto?.desc_producto }}</h2>
     </div>
-    <div class="text-left p-3 border-round-sm font-bold">
+    <div class="bg-primary text-white px-3 w-auto font-semibold text-lg">
       <span>{{
         producto?.val_producto | currency : "COP" : "$" : "1.0-4"
       }}</span>
     </div>
-    <div class="text-left p-3 border-round-sm font-bold">
+    <div class="text-left py-3 border-round-sm font-bold">
       <span
         >en 12x
         {{
@@ -22,22 +25,16 @@
         sin intereses</span
       >
     </div>
-
-    <div class="grid p-6">
-      <!-- <div class="col-12">
-        <div class="text-center p-3 border-round-sm bg-primary font-bold">
-          4
-        </div>
-      </div> -->
-      <div class="col-12 ">
-        <div class="border-1 text-center p-2 border-round-sm bg-secondary font-bold">
-          <p>Comprar ahora</p>
-        </div>
+    <div class="grid sm:grid-cols-2 p-6 w-full gap-3">
+      <div
+        class="border-[1px] border-primary text-primary text-center p-2 border-round-sm bg-white font-bold cursor-pointer"
+      >
+        <p>Comprar ahora</p>
       </div>
-      <div class="col-12">
-        <div class="text-center p-2 border-round-sm bg-primary font-bold">
-          <p>Agregar al carro</p>
-        </div>
+      <div
+        class="text-center p-2 border-round-sm bg-primary font-bold text-white cursor-pointer"
+      >
+        <p>Agregar al carro</p>
       </div>
     </div>
   </div>
