@@ -1,34 +1,29 @@
 <p-dataView #dv [value]="productos">
   <ng-template pTemplate="list" let-products>
-    <div class="grid grid-nogutter p-2">
-      <div
-        class="col-12 sm:col-6"
-        *ngFor="let producto of productos; let i = index"
-      >
+    <div class="p-2">
+      <div class="grid grid-cols-1 sm:grid-cols-2 bg-white">
+        @for (producto of productos; track producto.id_producto; let i = $index)
+        {
         <div
-          class="overflow-hidden flex flex-column xl:flex-row xl:align-items-start p-4 product-card m-2"
+          class="flex flex-col lg:flex-row md:align-items-start p-4 product-card m-2 shadow-gray-300 shadow-md"
           [ngClass]="{ 'border-top-1 surface-border': !i }"
-          style="height: 100%"
         >
           <a
             [routerLink]="['/store/producto', producto.id_producto]"
             routerLinkActive="router-link-active"
-            class="product-img shadow-2 xl:mr-3"
-
+            class="shadow-2 xl:mr-3 flex-1"
           >
             <img
-              class="w-9 sm:w-16rem xl:w-10rem block xl:block mx-auto border-round sm:h-10rem p-1"
+              class="w-full sm:w-16rem xl:w-10rem block xl:block mx-auto border-round sm:h-10rem p-1"
               [src]="producto | productoImage"
               [alt]="producto.nom_producto"
               style="min-height: 150px; object-fit: contain; max-height: 200px"
           /></a>
           <div
-            class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4"
-          style="background-color: #313e52; height: 100%;"
-
+            class="flex-1 flex flex-col sm:flex-col justify-content-between align-items-center xl:align-items-start gap-4"
           >
             <div
-              class="flex flex-column align-items-center sm:align-items-start gap-3"
+              class="flex flex-col align-items-center sm:align-items-start gap-3"
             >
               <a
                 class="text-2xl font-bold text-900"
@@ -45,33 +40,28 @@
                 ></span
               >
 
-              <!-- <p-rating [(ngModel)]="productos.rating" [readonly]="true" [cancel]="false"></p-rating> -->
-              <div class="flex align-items-center gap-3">
-                <span class="flex align-items-center gap-2">
+              <div class="">
+                <span class="">
                   <i class="pi pi-tag"></i>
                   <span class="font-semibold">{{
                     producto.marca_producto
                   }}</span>
                 </span>
-                <!-- <p-tag [value]="item.inventoryStatus" [severity]="getSeverity(item)"></p-tag> -->
               </div>
             </div>
             <div
               class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2"
             >
-              <span class="text-2xl font-semibold">{{
-                producto.val_producto | currency : "COP" : "$" : "1.0-4"
-              }}</span>
-              <button
-                pButton
-                icon="pi pi-shopping-cart"
-                class="md:align-self-end mb-2 p-button-rounded"
-                [routerLink]="['/store/producto', producto.id_producto]"
-                routerLinkActive="router-link-active"
-              ></button>
+              <span
+                class="text-2xl font-semibold bg-primary flex px-2 items-center text-white"
+                >{{
+                  producto.val_producto | currency : "COP" : "$" : "1.0-4"
+                }}</span
+              >
             </div>
           </div>
         </div>
+        }
       </div>
     </div>
   </ng-template>
