@@ -50,11 +50,12 @@ export class ProductsListPageComponent {
       message: `¿Quiere eliminar ${this.selectedProduct?.nom_producto}?'`,
       header: 'Confirmación de borrado',
       icon: 'pi pi-info-circle',
-      acceptButtonStyleClass: 'p-button-danger p-button-text',
-      rejectButtonStyleClass: 'p-button-text p-button-text',
+      acceptButtonStyleClass: 'btn-danger  p-3  m-2',
+      rejectButtonStyleClass: 'btn-gray  p-3 m-2',
       acceptIcon: 'none',
       rejectIcon: 'none',
-
+      acceptLabel: 'Eliminar',
+      rejectLabel: 'Cancelar',
       accept: () => {
         this.messageService.add({
           severity: 'info',
