@@ -7,7 +7,7 @@
       severity="success"
       label="Registrar producto"
       icon="pi pi-plus"
-      class="mr-2"
+      class="mr-2 btn-primary"
       routerLink="/dashboard/new-product"
     />
   </ng-template>
@@ -105,6 +105,7 @@
             pRipple
             icon="pi pi-trash"
             severity="danger"
+            class=""
             [rounded]="true"
             [outlined]="true"
             (onClick)="seleccionarProducto(producto); confirm2($event)"
