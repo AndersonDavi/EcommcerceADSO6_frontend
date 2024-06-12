@@ -22,15 +22,9 @@ export class LayoutPageComponent {
   ngOnInit() {
     this.items = [
       // {
+      //   label: 'Inicio',
       //   icon: 'pi pi-search',
-      // },
-      {
-        label: 'Inicio',
-        routerLink:"/store/list"
-      },
-      // {
-      //   label: 'Elementos',
-      //   routerLink:"/list"
+      //   routerLink:"/store/list"
       // },
     ];
   }

@@ -1,6 +1,27 @@
 <p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <h1
+      class="cursor-pointer text-primary font-bold"
+      [routerLink]="['/store/list']"
+    >
+      LOGO
+    </h1>
+  </ng-template>
   <ng-template pTemplate="end">
-    <p-button [routerLink]="['/auth']" label="Salir" icon="pi pi-sign-out" severity="secondary" [text]="true" [plain]="true"></p-button>
+    <p-button
+      [routerLink]="['/auth']"
+      icon="pi pi-shopping-cart"
+      severity="secondary"
+      [text]="false"
+      [plain]="true"
+    ></p-button>
+    <p-button
+      [routerLink]="['/auth']"
+      icon="pi pi-sign-out"
+      severity="secondary"
+      [text]="false"
+      [plain]="true"
+    ></p-button>
   </ng-template>
 </p-menubar>
 
@@ -21,12 +42,15 @@
   </div>
 </div>
 <p-divider type="solid"></p-divider>
-<div class="grid  grid-cols-1 text-center" style="height: 80px">
+<div class="grid grid-cols-1 text-center" style="height: 80px">
   <div class="flex justify-center">
-    <img src="https://tramiteinformativo.com/wp-content/uploads/2022/08/logo-sena-verde-png-sin-fondo.png" alt=""
-      style="height: 40px" />
+    <img
+      src="https://tramiteinformativo.com/wp-content/uploads/2022/08/logo-sena-verde-png-sin-fondo.png"
+      alt=""
+      style="height: 40px"
+    />
   </div>
   <div class="flex justify-center">
-    <p class="text-600" style="font-size: 10px;">&#64; 2024, Sena ADSO 6</p>
+    <p class="text-600" style="font-size: 10px">&#64; 2024, Sena ADSO 6</p>
   </div>
 </div>
