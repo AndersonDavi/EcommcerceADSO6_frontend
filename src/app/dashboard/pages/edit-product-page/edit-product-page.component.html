@@ -78,7 +78,11 @@
         class="flex-1 flex flex-col items-center justify-evenly h-full w-full"
       >
         <div class="card w-[50%] h-full min-h-[300px] p-6">
-          <img [src]="myForm.controls['img_url'].value" alt="imagen" class="shadow-lg shadow-gray-300 h-full w-full" />
+          <img
+            [src]="myForm.controls['img_url'].value"
+            alt="imagen"
+            class="shadow-lg shadow-gray-300 h-full w-full"
+          />
         </div>
 
         <div class="flex justify-evenly w-full p-5 md:py-0 text-nowrap">
@@ -86,12 +90,14 @@
             label="Guardar cambios"
             [disabled]="myForm.invalid"
             (onClick)="onSubmit()"
-            class="btn-primary w-[40%]"
+            class="w-[40%]"
+            styleClass="btn-primary size-full"
           ></p-button>
           <p-button
             label="Cancelar"
             routerLink="/dashboard/products"
-            class="btn-primary-outline w-[40%]"
+            class="w-[40%]"
+            styleClass="btn-primary-outline size-full"
           ></p-button>
         </div>
       </div>

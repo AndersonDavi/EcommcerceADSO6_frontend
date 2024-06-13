@@ -7,13 +7,13 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 .btn-primary {
-  @apply bg-primary text-white font-bold py-2 px-4 rounded  text-center transition-all cursor-pointer;
+  @apply bg-primary text-white font-bold py-2 px-4 rounded  text-center transition-all cursor-pointer hover:bg-primaryBold active:bg-primaryThin;
 }
 .btn-primary-outline {
-  @apply border-primary text-primary text-center p-2 border-[1px] bg-white font-bold cursor-pointer;
+  @apply border-primary text-primary text-center p-2 border-[1px] bg-white font-bold cursor-pointer hover:bg-primaryLight;
 }
 .btn-danger {
-  @apply bg-red-500 text-white font-bold py-2 px-4 rounded  text-center transition-all cursor-pointer;
+  @apply bg-danger text-white font-bold py-2 px-4 rounded  text-center transition-all cursor-pointer;
 }
 .btn-gray {
   @apply bg-gray-500 text-white font-bold py-2 px-4 rounded  text-center transition-all cursor-pointer;
@@ -25,6 +25,13 @@ span > .p-password-input:enabled:focus {
 span > .p-inputtext:hover,
 span > .p-password-input:enabled:focus {
   @apply border-primary shadow-sm shadow-primary;
+}
+
+.color {
+  color: #33cc99;
+  color: #2dc290;
+  color: #35e4a9;
+  color: rgba(53, 228, 169, 0.2);
 }
 /* .btn-primary:hover {
   @apply text-lg;
