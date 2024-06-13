@@ -1,55 +1,98 @@
-<div class="container flex flex-row justify-content-evenly align-items-center">
-  <div
-    class="form-container flex flex-column justify-content-evenly align-items-center w-12 h-full"
-  >
-    <h3>Añadir producto</h3>
+<div class="h-full w-full flex flex-row items-center justify-center bg-white">
+  <div class="flex flex-col w-full h-full">
+    <h3 class="text-center my-5 text-xl font-semibold">Añadir producto</h3>
     <form
       [formGroup]="myForm"
-      class="flex flex-column justify-content-evenly align-items-center w-12 h-full"
+      class="flex flex-col md:flex-row justify-evenly items-center w-full h-full"
     >
-      <div class="card flex flex-column w-6">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" type="text" pInputText formControlName="nombre" />
-      </div>
-      <div class="card flex flex-column w-6">
-        <label for="descripcion">Descripción</label>
-        <input
-          id="descripcion"
-          type="text"
-          pInputText
-          formControlName="descripcion"
-        />
-      </div>
-      <div class="card flex flex-column w-6">
-        <label for="marca">Marca</label>
-        <input id="marca" type="text" pInputText formControlName="marca" />
-      </div>
-      <div class="card flex flex-column w-6">
-        <label for="modelo">Modelo</label>
-        <input id="modelo" type="text" pInputText formControlName="modelo" />
-      </div>
-      <div class="card flex flex-column w-6">
-        <label for="valor">Valor</label>
-        <p-inputNumber
-          inputId="integeronly"
-          mode="currency"
-          currency="COP"
-          formControlName="valor"
-        />
-      </div>
+      <div
+        class="flex-1 flex flex-col items-center justify-evenly h-full w-full px-6 gap-4 pb-6"
+      >
+        <div class="card flex flex-col w-full border-solid">
+          <label for="nombre">Nombre</label>
+          <input
+            id="nombre"
+            type="text"
+            pInputText
+            class="w-full p-2 border-gray-300 border-[1px]"
+            formControlName="nombre"
+          />
+        </div>
+        <div class="card flex flex-col w-full border-solid">
+          <label for="descripcion">Descripción</label>
+          <input
+            id="descripcion"
+            type="text"
+            pInputText
+            class="w-full p-2 border-gray-300 border-[1px]"
+            formControlName="descripcion"
+          />
+        </div>
+        <div class="card flex flex-col w-full border-solid">
+          <label for="marca">Marca</label>
+          <input
+            id="marca"
+            type="text"
+            class="w-full p-2 border-gray-300 border-[1px]"
+            pInputText
+            formControlName="marca"
+          />
+        </div>
+        <div class="card flex flex-col w-full border-solid">
+          <label for="modelo">Modelo</label>
+          <input
+            id="modelo"
+            type="text"
+            class="w-full p-2 border-gray-300 border-[1px]"
+            pInputText
+            formControlName="modelo"
+          />
+        </div>
+        <div class="card flex flex-col w-full border-solid">
+          <label for="valor">Valor</label>
+          <p-inputNumber
+            inputId="integeronly"
+            mode="currency"
+            [style]="{ width: '100%' }"
+            [inputStyle]="{
+              height: '100%',
+              padding: '0.5rem'
+            }"
+            inputStyleClass="w-full p-2 border-gray-300 border-[1px]"
+            currency="COP"
+            formControlName="valor"
+          />
+        </div>
 
-      <div class="card flex flex-column w-6">
-        <label for="imagen">Imagen</label>
-        <input id="imagen" type="text" pInputText formControlName="imagen" />
+        <div class="card flex flex-col w-full border-solid">
+          <label for="imagen">Imagen</label>
+          <input
+            id="imagen"
+            type="text"
+            class="w-full p-2 border-gray-300 border-[1px]"
+            pInputText
+            formControlName="imagen"
+          />
+        </div>
       </div>
-      <div class="card image-container w-6">
-        <img [src]="myForm.controls['imagen'].value" alt="imagen" />
+      <div
+        class="flex-1 flex flex-col items-center justify-evenly h-full w-full"
+      >
+        <div class="card w-[50%] h-full min-h-[300px] p-6">
+          <img
+            [src]="myForm.controls['imagen'].value"
+            alt="imagen"
+            class="shadow-lg shadow-gray-300 h-full w-full"
+          />
+        </div>
+        <p-button
+          label="Enviar"
+          [disabled]="myForm.invalid"
+          (onClick)="onSubmit()"
+          styleClass="btn-primary w-[100%]"
+          class="btn-primary w-[40%]"
+        ></p-button>
       </div>
-      <p-button
-        label="Enviar"
-        [disabled]="myForm.invalid"
-        (onClick)="onSubmit()"
-      ></p-button>
     </form>
   </div>
 </div>
