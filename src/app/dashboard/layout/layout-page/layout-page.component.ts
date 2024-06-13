@@ -27,16 +27,17 @@ export class LayoutPageComponent {
       },
       {
         label: 'Usuarios',
-        items: [
-          {
-            label: 'Lista de usuarios',
-            routerLink: '/dashboard/users',
-          },
-          {
-            label: 'Crear usuario',
-            routerLink: '/dashboard/new-user',
-          },
-        ],
+        routerLink: '/dashboard/users',
+        // items: [
+        //   {
+        //     label: 'Lista de usuarios',
+        //     routerLink: '/dashboard/users',
+        //   },
+        //   {
+        //     label: 'Crear usuario',
+        //     routerLink: '/dashboard/new-user',
+        //   },
+        // ],
       },
       {
         label: 'Productos',

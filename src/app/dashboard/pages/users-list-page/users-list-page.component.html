@@ -1,1 +1,110 @@
-<p>users-list-page works!</p>,
+<p-toast />
+
+<p-toolbar styleClass="mb-4 gap-2">
+  <ng-template pTemplate="left">
+    <p-button
+      pRipple
+      severity="success"
+      label="Registrar usuario"
+      icon="pi pi-plus"
+      class="mr-2 btn-primary"
+      routerLink="/dashboard/new-user"
+    />
+  </ng-template>
+</p-toolbar>
+<div class="table-container">
+  <p-table
+    #dt
+    [value]="users"
+    [rows]="15"
+    [paginator]="true"
+    [tableStyle]="{ 'min-width': '10rem' }"
+    [rowHover]="true"
+    dataKey="id"
+    currentPageReportTemplate="Mostrando de {first} a {last} de {totalRecords} usuarios"
+    [showCurrentPageReport]="true"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex items-center justify-between">
+        <h5 class="m-0">Administrar Usuarios</h5>
+
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input
+            pInputText
+            type="text"
+            placeholder="Buscar"
+            class="pl-9"
+            (input)="dt.filterGlobal($event, 'contains')"
+          />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="id_user" style="min-width: 5rem">
+          ID <p-sortIcon field="id_user" />
+        </th>
+        <th pSortableColumn="nom_user" style="min-width: 8rem">
+          Nombre <p-sortIcon field="nom_user" />
+        </th>
+        <th pSortableColumn="doc_user">
+          N° documento <p-sortIcon field="doc_user" />
+        </th>
+        <th pSortableColumn="email_user">
+          Correo <p-sortIcon field="email_user" />
+        </th>
+        <th pSortableColumn="address_user" style="min-width: 8rem">
+          Dirección <p-sortIcon field="address_user" />
+        </th>
+        <th pSortableColumn="tel_user">
+          Telefono <p-sortIcon field="tel_user" />
+        </th>
+        <th pSortableColumn="rol_user" style="min-width: 10rem">
+          Rol <p-sortIcon field="rol_user" />
+        </th>
+        <th style="min-width: 10rem"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <p-button
+            pRipple
+            icon="pi pi-pencil"
+            class="mr-2"
+            styleClass="text-primary border-primary border-[1px] hover:bg-primary hover:text-white"
+            [rounded]="true"
+            [outlined]="true"
+            severity="success"
+            [routerLink]="['/dashboard/edit-product', user.id_producto]"
+          />
+          <p-button
+            pRipple
+            icon="pi pi-trash"
+            severity="danger"
+            class=""
+            styleClass="text-danger border-danger border-[1px] hover:bg-danger hover:text-white"
+            [rounded]="true"
+            [outlined]="true"
+            (onClick)="seleccionarUsuario(user); confirm2($event)"
+          />
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        En total se encontraton {{ users ? users.length : 0 }} usuarios.
+      </div>
+    </ng-template>
+  </p-table>
+  <p-toast />
+  <p-confirmDialog />
+</div>
